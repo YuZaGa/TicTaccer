@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper">
+<div class='container' style="justify-content: center; align-content: center; padding: 15px; background-color: white; border-radius: 7px;" >
+  <div class="alert alert-primary" style="text-align: center;"role="alert">
+    <strong>Tic Tac Toe</strong>
+  </div>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class='form-control'>
+      <input id="room" placeholder="Enter Room ID" type="text" name="room_code" required style=" padding: 10px; background-color: #56baed; border-radius: 7px;" />
+    </div>
+    <br>
+    <div class='form-control' >
+
+      <select for="character_choice" name="character_choice" style=" padding: 10px; background-color: #56baed; border-radius: 7px;">
+        <option value="X">X</option>
+        <option value="O">O</option>
+      </select>
+    </div>
+    <br>
+    <input type="submit" class="button" value="Start Game"  style=" padding: 10px; background-color: #56baed; border-radius: 7px;" />
+  </form>
+</div>
+ 
+</div>
+{% endblock content %}
