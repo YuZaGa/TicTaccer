@@ -76,23 +76,13 @@ TEMPLATES = [
 ASGI_APPLICATION = "tic_tac_toe.asgi.application"
 CHANNEL_LAYERS = {
     'default': {
-        ## Method 1: Via redis lab
-        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        # 'CONFIG': {
-        #     "hosts": [
-        #       'redis://h:le16Dn6dYwGHOZLF9vWxySxmQSIwE4Zz@redis-12573.c99.us-east-1-4.ec2.cloud.redislabs.com:12573' 
-        #     ],
-        # }
-        
-        ## Method 2: Via local redis
-        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        # 'CONFIG': {
-        #     # "hosts": [('127.0.0.1', 6379)],
-        # },
-        
-        ## Method 3: Via In-memory channel layer
-        
+
+        #"BACKEND": "channels_redis.core.RedisChannelLayer",
+        #"CONFIG": {
+        #    "hosts": [("127.0.0.1", 6379)],
+        #},
         "BACKEND": "channels.layers.InMemoryChannelLayer"
+    
     },
 }
 
@@ -144,9 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 import os
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATIC_ROOT =   os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
 django_heroku.settings(locals())
