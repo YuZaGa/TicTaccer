@@ -32,7 +32,7 @@ https://codeburst.io/deploy-your-django-project-for-free-140d73a2c76b
 The free tier of Heroku sleeps after 30 minutes of inactivity. Use Kaffiene (http://kaffeine.herokuapp.com/) to keep it awake. 
 
 ## To-Do
-1. Deployment error fix over https. The project deploys but isn't able to connect over a secure connection and since Heroku usses https, the web socket fails to establish connection. [Possible fix could be using daphne](https://www.youtube.com/watch?v=zizzeE4Obc0&list=WL&index=10). 
+1. Deployment error fix over https. The project deploys but isn't able to connect over a secure connection and since Heroku uses https, the web socket fails to establish connection. [Possible fix could be using daphne](https://www.youtube.com/watch?v=zizzeE4Obc0&list=WL&index=10). 
 
 
 
