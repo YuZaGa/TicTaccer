@@ -74,7 +74,7 @@ TEMPLATES = [
 # WSGI_APPLICATION = 'tic_tac_toe.wsgi.application'
 # Channels
 ASGI_APPLICATION = "tic_tac_toe.asgi.application"
-CHANNEL_LAYERS = {
+''' CHANNEL_LAYERS = {
     'default': {
 
         #"BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -84,7 +84,17 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
     
     },
+} '''
+
+CHANNEL_LAYERS = { 
+    'default': { 
+        'BACKEND': 'channels_redis.core.RedisChannelLayer', 
+        'CONFIG': { 
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')], 
+        }, 
+    }, 
 }
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
