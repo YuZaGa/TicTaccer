@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: daphne -b 0.0.0.0 -p $PORT tic_tac_toe.asgi:application
+web: daphne tic_tac_toe.asgi:application --port $PORT --bind 0.0.0.0 -v2
